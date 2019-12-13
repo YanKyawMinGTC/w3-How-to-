@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<title>Calculator</title>
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/calculator/calculator_02.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="search_and_sorting_filter.html">Search & Sorting</a></li>
+			<li><a href="registration_form_validation.html">Registration Form Validation</a></li>
+			<li><a href="image_switching.html">Image Switching</a></li>
+			<li><a href="#" class="active">Calculator</a>
+			<ul>
+				<li><a href="calculator_01.html">Calculator_01
+				</a></li>
+				<li><a href="calculator_02.html">Calculator_02
+				</a></li>
+				<li><a href="calculator_03.html">Calculator_03
+				</a></li>
+			</ul>
+		</li>
+		<li><a href="page_loading.html">Page Loading</a></li>
+		<li><a href="factorial.html">Factorial</a></li>
+		<li><a href="percentage.html">Percentage</a></li>
+		<li><a href="to_do_list.html">To do List</a></li>
+	</ul>
+	<h1>Calculator</h1>
+	<form name="calculator">
+		<input name="display" class="display" placeholder="0" />
+		<br>
+		<input type="button" value="7" onClick="document.calculator.display.value +='7'" class="abc"/>
+		<input type="button" value="8" onClick="document.calculator.display.value +='8'" class="abc"/>
+		<input type="button" value="9" onClick="document.calculator.display.value +='9'" class="abc"/>
+		<input type="button" value="+"  onClick="btnplus()"class="abc" />
+	</div>
+	<br>
+	<input type="button" value="4" onClick="document.calculator.display.value+='4'"  class="abc"/>
+	<input type="button" value="5" onClick="document.calculator.display.value+='5'" class="abc"/>
+	<input type="button" value="6" onClick="document.calculator.display.value+='6'"  class="abc"/>
+	<input type="button" value="-"  onClick="btnminus()"  class="abc"/>
+	<br>
+	<input type="button" value="1" onClick="document.calculator.display.value+='1'"  class="abc"/>
+	<input type="button" value="2" onClick="document.calculator.display.value+='2'"  class="abc"/>
+	<input type="button" value="3" onClick="document.calculator.display.value+='3'"   class="abc"/>
+	<input type="button" value="*"  onClick="btnmul()"  class="abc"/>
+	<br>
+	<input type="button" value="c"  onClick="btnclear()" class="abc"/>
+	<input type="button" value="0"  onClick="document.calculator.display.value+='0'"  class="abc"/>
+	<input type="button" value="="  onClick="document.calculator.display.value=eval(document.calculator.display.value)" class="abc"/>
+	<input type="button" value="/"  onClick="btndiv()"  class="abc"/>
+</form>
+<script src="js/calculator/calculator_02.js"></script>
+</body>
+</html>

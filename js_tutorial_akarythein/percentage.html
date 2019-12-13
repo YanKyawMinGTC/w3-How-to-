@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Percentage</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/percentage/percentage.css">
+  </head>
+  <body>
+    <ul class="nav">
+      <li><a href="search_and_sorting_filter.html">Search & Sorting</a></li>
+      <li><a href="registration_form_validation.html">Registration Form Validation</a></li>
+      <li><a href="image_switching.html">Image Switching</a></li>
+      <li><a href="#">Calculator</a>
+      <ul>
+        <li><a href="calculator_01.html">Calculator_01
+        </a></li>
+        <li><a href="calculator_02.html">Calculator_02
+        </a></li>
+        <li><a href="calculator_03.html">Calculator_03
+        </a></li>
+      </ul>
+    </li>
+    <li><a href="page_loading.html">Page Loading</a></li>
+    <li><a href="factorial.html">Factorial</a></li>
+    <li><a href="percentage.html" class="active">Percentage</a></li>
+    <li><a href="to_do_list.html">To do List</a></li>
+  </ul>
+  <h1>Percentage</h1>
+  <form id="myform">
+    <input type="number" id="outerwidth" placeholder="Outer Width :"/><br>
+    <input type="number" id="innerwidth" placeholder="Inner Width :"/><br>
+    <input type="button" onclick="Calculate()" value="Calculate" />
+    <input type="reset" value="Reset" /><br/>
+    <input type="text" disabled="disabled" id="result">
+  </form>
+  <script src="js/percentage/percentage.js"></script>
+</body>
+</html>

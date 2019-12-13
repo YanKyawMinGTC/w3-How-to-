@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <title>Image Switch with Media Queries</title>
+  <style>
+    .content {
+      width: 100%;
+      text-align: center;
+    }
+
+    img {
+      width: 50%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body id="image_switch">
+  <div class="content">
+    <h1>Image Switch with Media Queries</h1>
+    <h2 id="demo"></h2>
+    <p id="result"></p>
+    <img src="img/elsa01.jpg" class="change">
+    <img src="img/elsa02.jpg" class="change">
+    <img src="img/elsa03.png" class="change">
+    <img src="img/img/main.jpg" class="change">
+  </div>
+  <script>
+
+    $(window).on('resize', function () {
+      location.reload();
+    });
+    var w = window.innerWidth;
+    $('.change').each(function () {
+      var src = $(this).attr('src');
+      var data = src.split('.')[0];
+      console.log(data);
+      var ext = src.slice(-4);
+      console.log(ext);
+      var sp_file = data + "_sp" + ext;
+      console.log(sp_file);
+      if (w <= 767) {
+        var sp_src = $(this).attr('src').replace($(this).attr('src'), sp_file);
+        $(this).attr('src', sp_src);
+      }
+    });
+  </script>
+</body>
+
+</html>

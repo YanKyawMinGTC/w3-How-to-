@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Search and Sorting Filter</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/search_and_sorting_filter/search_and_sorting_filter.css">
+  </head>
+  <body>
+    <ul class="nav">
+      <li><a href="search_and_sorting_filter.html" class="active">Search & Sorting</a></li>
+      <li><a href="registration_form_validation.html">Registration Form Validation</a></li>
+      <li><a href="image_switching.html">Image Switching</a></li>
+      <li><a href="#">Calculator</a>
+      <ul>
+        <li><a href="calculator_01.html">Calculator_01
+        </a></li>
+        <li><a href="calculator_02.html">Calculator_02
+        </a></li>
+        <li><a href="calculator_03.html">Calculator_03
+        </a></li>
+      </ul>
+    </li>
+    <li><a href="page_loading.html">Page Loading</a></li>
+    <li><a href="factorial.html">Factorial</a></li>
+    <li><a href="percentage.html">Percentage</a></li>
+    <li><a href="to_do_list.html">To do List</a></li>
+  </ul>
+  <h1>Search and Sorting Filter</h1>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for student name..">
+  <table id="myTable">
+    <tr class="header">
+      <th onclick="sortTable(0)">Student</th>
+      <th onclick="sortTable(1)">University</th>
+      <th onclick="sortTable(2)">Major</th>
+      <th onclick="sortTable(3)">Average</th>
+    </tr>
+    <tr>
+      <td>Jack Kibry</td>
+      <td>Stanford</td>
+      <td>Mathematics</td>
+      <td>51%</td>
+    </tr>
+    <tr>
+      <td>Alden Dudley</td>
+      <td>Trinity</td>
+      <td>Biology</td>
+      <td>78%</td>
+    </tr>
+    <tr>
+      <td>Nicole Horne</td>
+      <td>Harvard</td>
+      <td>Economics</td>
+      <td>99%</td>
+    </tr>
+    <tr>
+      <td>Gavin Chan</td>
+      <td>Yale</td>
+      <td>Engineering</td>
+      <td>45%</td>
+    </tr>
+    <tr>
+      <td>Stacey Houston</td>
+      <td>Oxford</td>
+      <td>Chemistry</td>
+      <td>93%</td>
+    </tr>
+    <tr>
+      <td>Ann Jackson</td>
+      <td>Cambridge</td>
+      <td>Physics</td>
+      <td>55%</td>
+    </tr>
+    <tr>
+      <td>Brennan Cote</td>
+      <td>Berkeley</td>
+      <td>Economics</td>
+      <td>52%</td>
+    </tr>
+    <tr>
+      <td>Reed Gray</td>
+      <td>Princeton</td>
+      <td>Computer Science</td>
+      <td>84%</td>
+    </tr>
+    <tr>
+      <td>Dorian Brock</td>
+      <td>Duke</td>
+      <td>Geology</td>
+      <td>66%</td>
+    </tr>
+  </table>
+  <script src="js/search_and_sorting_filter/search_and_sorting_filter.js"></script>
+</body>
+</html>

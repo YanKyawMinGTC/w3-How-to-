@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<title>Registration Form Validation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/registration_form_validation/registration_form_validation.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="search_and_sorting_filter.html">Search & Sorting</a></li>
+			<li><a href="registration_form_validation.html" class="active">Registration Form Validation</a></li>
+			<li><a href="image_switching.html">Image Switching</a></li>
+			<li><a href="#">Calculator</a>
+			<ul>
+				<li><a href="calculator_01.html">Calculator_01
+				</a></li>
+				<li><a href="calculator_02.html">Calculator_02
+				</a></li>
+				<li><a href="calculator_03.html">Calculator_03
+				</a></li>
+			</ul>
+		</li>
+		<li><a href="page_loading.html">Page Loading</a></li>
+		<li><a href="factorial.html">Factorial</a></li>
+		<li><a href="percentage.html">Percentage</a></li>
+		<li><a href="to_do_list.html">To do List</a></li>
+	</ul>
+	<form name="registration" id="regForm" action="" method="POST" onSubmit="validateForm(event)">
+		<h1>Registration Form Validation</h1>
+		<div class="tab">Name:
+			<p><input type="text" name="fname" placeholder="First name..." oninput="this.className = ''" maxlength="20"></p>
+			<p><input type="text" name="lname" placeholder="Last name..." oninput="this.className = ''" maxlength="20"></p>
+		</div>
+		<div class="tab">Contact Info:
+			<p><input type="text" name="email" placeholder="E-mail..." oninput="this.className = ''" id="mail" maxlength="20"></p>
+			<p><input type="number" max="11" name="phone" placeholder="Phone..." oninput="this.className = ''" maxlength="15"></p>
+		</div>
+		<div class="tab">Birthday:
+			<p><input type="text" name="day" placeholder="dd" oninput="this.className = ''" maxlength="2"></p>
+			<p><input type="text" name="month" placeholder="mm" oninput="this.className = ''" maxlength="2"></p>
+			<p><input type="text" name="year" placeholder="yyyy" oninput="this.className = ''" maxlength="4"></p>
+		</div>
+		<div class="tab">Login Info:
+			<p><input type="text" name="username" placeholder="Username..." oninput="this.className = ''" maxlength="20"></p>
+			<p><input type="password" name="password" placeholder="Password..." oninput="this.className = ''" maxlength="20"></p>
+		</div>
+		<div style="overflow:auto;">
+			<div style="float:right;">
+				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+			</div>
+		</div>
+		<div style="text-align:center;margin-top:40px;">
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+		</div>
+	</form>
+	<script src="js/registration_form_validation/registration_form_validation.js"></script>
+</body>
+</html>

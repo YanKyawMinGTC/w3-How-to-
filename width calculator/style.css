@@ -1,0 +1,75 @@
+body {
+  background: #0d6785;
+}
+
+.container {
+  width: 600px;
+  margin: 50px auto;
+}
+
+.container h1 {
+  font-size: 20px;
+  font-weight: bold;
+  font-weight: bold;
+  text-align: center;
+  color: #5ac18e;
+}
+
+input {
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #f5f1f1;
+  border: 2px solid #bada55;
+  outline: none;
+}
+
+#show_value {
+  margin-left: 28px;
+}
+
+input:hover {
+  background: #B0E0E6;
+}
+
+label {
+  width: 100px;
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #5ac18e;
+}
+
+.myBtn {
+  width: 20%;
+  margin-right: 20px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  color: #669966;
+  background: #ffff66;
+  border: 1px solid #9a542e;
+  outline: none;
+}
+
+.myBtn:nth-child(1) {
+  margin-left: 171px;
+}
+
+.myBtn:nth-child(2) {
+  margin-right: 0px;
+}
+
+#myBtn:hover {
+  opacity: 0.8;
+}
+
+span {
+  margin-left: -30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #273b66;
+}

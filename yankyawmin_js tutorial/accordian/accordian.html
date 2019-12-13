@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Basic Accordian</title>
+  <link rel="stylesheet" href="accordian.css">
+</head>
+
+<body>
+  <div class="one_acc">
+    <h2>One accordion</h2>
+
+    <button class="accordion">Section 1</button>
+    <div class="panel ">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia minus, iusto eius ipsum quae adipisci ut maxime
+        delectus quis nisi vel! Excepturi non optio nisi quia aliquid ea, perferendis quae.</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="panel ">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto sequi tempore iste reiciendis expedita vel
+        mollitia iusto doloremque, error dolores voluptates sapiente placeat veniam, impedit vitae necessitatibus
+        doloribus facere quos?</p>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="panel ">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto sequi tempore iste reiciendis expedita vel
+        mollitia iusto doloremque, error dolores voluptates sapiente placeat veniam, impedit vitae necessitatibus
+        doloribus facere quos?</p>
+    </div>
+  </div>
+
+
+
+</body>
+<script>
+  var acc = document.getElementsByClassName('accordion');
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle('active');
+      // console.log('active on off  ');
+
+      var panel = this.nextElementSibling;
+      if (panel.style.display == "block") {
+        console.log("panel=block");
+        panel.style.display = "none";
+      } else {
+        console.log('panel=none');
+        panel.style.display = "block";
+      }
+    });
+  }
+
+
+
+</script>
+
+</html>

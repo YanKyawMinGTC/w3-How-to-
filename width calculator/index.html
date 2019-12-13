@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Width Calculator(%)</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1 class="factory"> Width Calculator(%) </h1>
+      <form action="#" id="myform">
+        <div class="number">
+          <label for="value">Outer Width</label>
+          <input type="number" required id="outer_width" title="press enter key"><br>
+          <label for="value">Inner Width</label>
+          <input type="number" required id="inner_width" title="press enter key">
+          <div>
+            <input type="reset" class="myBtn">
+            <input type="button" class="myBtn" id="myBtnid" onclick="calculate_width()" value="submit">
+          </div>
+          <div class="ans">
+            <label for="show_value">Ans (%);</label>
+            <input type="text" id="show_value" disabled value="ans"></input><span>%</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<script>
+
+  var form = document.getElementById("myform");
+  form.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById("myBtnid").click();
+    }
+  });
+  var outer = document.getElementById("outer_width");
+  var inner = document.getElementById("inner_width");
+  var ans_value = document.getElementById("show_value");
+  function calculate_width() {
+    if (outer.value !== "" || inner.value !== "") {
+      var x = Math.abs(outer.value);
+      var y = Math.abs(inner.value);
+      var ans = (y / x) * 100;
+      ans_value.value = ans;
+    } else if (outer.value == "" || inner.value == "") {
+      alert("Please select a value!!");
+    }
+  }
+</script>
+
+</html>

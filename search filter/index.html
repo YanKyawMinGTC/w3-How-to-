@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #000;
+      background: #f9a8c4;
+    }
+
+    .container {
+      width: 980px;
+      margin: 0 auto;
+
+    }
+
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+
+    table {
+      width: 100%;
+      border: 2px solid #ddd;
+      border-collapse: collapse;
+    }
+
+    table thead td {
+      background: #8064A2;
+    }
+
+    table tr {
+
+      background: #CCC0DA;
+    }
+
+    table tr:nth-child(odd) {
+      background: #E4DFEC;
+    }
+
+    table td {
+      padding: 10px 10px;
+      width: 25%;
+    }
+
+    .button {
+      margin: 0 0 0 20px;
+      padding: 10px 5px;
+      background: #e891a0;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .button:hover {
+
+      background: #ffd79b;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>My Phonebook</h2>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+    <table>
+      <thead>
+        <tr>
+          <td>Student <span class="button stu_name" onclick="sortby(0)">sort by</span></td>
+          <td>University <span class="button uni_name" onclick="sortby(1)">sort by</span></td>
+          <td>Major <span class="button major_name" onclick="sortby(2)">sort by</span></td>
+          <td>Average <span class="button aver_range" onclick="sortby(3)">sort by</span></td>
+        </tr>
+      </thead>
+      <tbody id="myUL">
+        <tr class="jack">
+          <td>Jack Kirby</td>
+          <td>Stanford</td>
+          <td>Myanmar</td>
+          <td>51%</td>
+        </tr>
+        <tr class="aleden">
+          <td>Alden Dudley</td>
+          <td>Trinity</td>
+          <td>Engineeering</td>
+          <td>33%</td>
+        </tr>
+        <tr class="nicole">
+          <td>Nicole Horne</td>
+          <td>Harvard</td>
+          <td>Math</td>
+          <td>44%</td>
+        </tr>
+        <tr class="gavin">
+          <td>Gavin Chan</td>
+          <td>Yale</td>
+          <td>History</td>
+          <td>88%</td>
+        </tr>
+        <tr class="stacey">
+          <td>Stacey Houston</td>
+          <td>Oxford</td>
+          <td>Chemistry</td>
+          <td>20%</td>
+        </tr>
+        <tr class="ann">
+          <td>Ann Jackson</td>
+          <td>Cambridge</td>
+          <td>Economics</td>
+          <td>30%</td>
+        </tr>
+        <tr class="bre">
+          <td>Brennan cote</td>
+          <td>Bakeley</td>
+          <td>Geology</td>
+          <td>12%</td>
+        </tr>
+        <tr class="reed">
+          <td>Reed Gray</td>
+          <td>Princeton</td>
+          <td>Physics</td>
+          <td>45%</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+  <script>
+    function myFunction() {
+      var input, filter, table, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myUL");
+      li = table.getElementsByTagName("tr");
+      console.log(li);
+
+      for (i = 0; i < li.length; i++) {
+        var first_child = li[i].children[0];
+        // console.log(first_child);
+        txtValue = first_child.textContent || first_child.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          // console.log(txtValue);
+          li[i].style.display = "";
+        } else {
+          // console.log(filter);
+          li[i].style.display = "none";
+        }
+      }
+    }
+
+    function sortby(n) {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myUL");
+      switching = true;
+      /*Make a loop that will continue until
+      no switching has been done:*/
+      while (switching) {
+        //start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /*Loop through all table rows (except the
+        first, which contains table headers):*/
+        for (i = 0; i < (rows.length - 1); i++) {
+          //start by saying there should be no switching:
+          shouldSwitch = false;
+          /*Get the two elements you want to compare,
+          one from current row and one from the next:*/
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          //check if the two rows should switch place:
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          /*If a switch has been marked, make the switch
+          and mark that a switch has been done:*/
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>

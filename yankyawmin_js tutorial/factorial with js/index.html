@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body onLoad="document.registration.userid.focus();">
+  <div class="wrapper">
+    <div class="container">
+      <h1 class="factory">
+        Factory Calculator (n!)
+      </h1>
+      <div class="number">
+        <label for="value">Input Number</label>
+        <input type="number" required id="value" title="press enter key"><span>!</span>
+        <button type="submit" onclick="calculate_fact()" id="myBtn">Click</button>
+        <div class="ans">
+          <label for="show_value">Ans ;</label>
+          <input id="show_value" disabled></input>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+
+  var input_value = document.getElementById("value");
+  input_value.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById("myBtn").click();
+    }
+  });
+  var input_value = document.getElementById("value");
+  var ans_value = document.getElementById("show_value");
+  function calculate_fact() {
+    if (input_value.value !== "") {
+      var x = Math.abs(input_value.value);
+      var ans = 1;
+      for (i = 1; i <= x; i++) {
+        ans *= i;
+        console.log(ans);
+      }
+      ans_value.value = ans;
+    } else if (input_value.value == "") {
+      alert("Please select a value!!");
+    }
+  }
+
+
+
+
+
+
+
+
+</script>
+
+</html>

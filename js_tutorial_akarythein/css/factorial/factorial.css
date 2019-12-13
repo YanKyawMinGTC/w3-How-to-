@@ -1,0 +1,11 @@
+#myform {
+  margin: 0 auto;
+  text-align: center;
+}
+input {
+  padding: 10px;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+  margin-bottom: 10px;
+}

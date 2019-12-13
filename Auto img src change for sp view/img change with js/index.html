@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Image Change</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <style>
+    body {
+      color: #4c4c4c;
+      background: #ffd79b;
+    }
+
+    .container .inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 50px;
+    }
+
+    .center {
+      width: 100%;
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      width: 20%;
+      margin: 0 auto;
+      height: auto;
+    }
+
+    @media only screen and (max-width: 767px) {
+      .container .inner {
+        width: 80%;
+      }
+
+      img {
+        width: 50%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="inner">
+      <h1 id="tit">Changing img pc to sp With JS</h1><br>
+      <h2>Window height: <span id="height"></span></h2>
+      <h2>Window width: <span id="width"></span></h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nostrum nobis doloremque voluptatum nulla
+        debitis, explicabo, est temporibus odio eum rem sapiente minima neque totam facilis! Quisquam perspiciatis
+        voluptate excepturi?</p>
+      <br>
+      <div class="center">
+        <!-- don't delete switch_pc_sp class in img-->
+        <img src="img/header_pc.jpg" alt="img" class="switch_pc_sp"><br>
+        <img src="img/main_pc.jpeg" alt="img" class="switch_pc_sp"><br>
+        <img src="img/sec_pc.png" alt="img" class="switch_pc_sp"><br>
+        <img src="img/footer_link_pc.png" alt="img" class="switch_pc_sp"><br>
+      </div>
+    </div>
+  </div>
+  <script>
+    // for refresh pc to sp and sp to pc
+    $(window).on('resize', function () {
+      location.reload();
+    });
+    // for show device width and device height 
+    const heightOutput = document.querySelector('#height');
+    const widthOutput = document.querySelector('#width');
+    var request_true = true;
+
+    function displayWindowSize() {
+      heightOutput.textContent = window.innerHeight;
+      widthOutput.textContent = window.innerWidth;
+      var width = window.innerWidth;
+      if (width <= 767 && request_true) {
+        // console.log("inner of " + widthOutput);
+        // color change 
+        document.body.style.background = "#f2e64b";
+        document.body.style.color = "#b4127c";
+        document.getElementById("tit").innerHTML = "Oops!! img change";
+        // select of switch_pc_sp class 
+        var img = document.querySelectorAll(".switch_pc_sp");
+        // looping for all img
+        for (var i = 0; i < img.length; i++) {
+          var new_img = img[i].src.replace("pc", "sp");
+          document.getElementsByClassName("switch_pc_sp")[i].src = new_img;
+        }
+        request_true = false;
+      } else if (width > 767) {
+        console.log("Outer of" + widthOutput);
+        document.body.style.background = "#ffd79b";
+        var img_pc = document.querySelectorAll(".switch_pc_sp");
+        for (var i = 0; i < img.length; i++) {
+          var new_img = img[i].src.replace("sp", "pc");
+          document.getElementsByClassName("switch_pc_sp")[i].src = new_img;
+        }
+        return request_true;
+      }
+    }
+
+    // for window's resize event
+    window.addEventListener("resize", displayWindowSize);
+    // Calling the function for the first time
+    displayWindowSize();
+  </script>
+</body>
+
+</html>

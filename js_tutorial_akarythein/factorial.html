@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Factorial</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/factorial/factorial.css">
+  </head>
+  <body>
+    <ul class="nav">
+      <li><a href="search_and_sorting_filter.html">Search & Sorting</a></li>
+      <li><a href="registration_form_validation.html">Registration Form Validation</a></li>
+      <li><a href="image_switching.html">Image Switching</a></li>
+      <li><a href="#">Calculator</a>
+        <ul>
+          <li><a href="calculator_01.html">Calculator_01
+          </a></li>
+          <li><a href="calculator_02.html">Calculator_02
+          </a></li>
+          <li><a href="calculator_03.html">Calculator_03
+          </a></li>
+        </ul>
+      </li>
+      <li><a href="page_loading.html">Page Loading</a></li>
+      <li><a href="factorial.html" class="active">Factorial</a></li>
+      <li><a href="percentage.html">Percentage</a></li>
+      <li><a href="to_do_list.html">To do List</a></li>
+    </ul>
+    <h1>Factotial</h1>
+    <form id="myform">
+      <input type="number" id="number" placeholder="Enter number"/><br>
+      <input type="button" onClick="factorial()" value="Calculate" />
+      <input type="reset" value="Reset" /><br>
+      <input type="text" disabled="disabled" id="result">
+    </form>
+    <script src="js/factorial/factorial.js"></script>
+  </body>
+</html>

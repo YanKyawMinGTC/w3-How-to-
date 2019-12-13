@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Range Slider </title>
+  <style>
+    * {
+      color: #3a4664;
+      font-size: 16px;
+    }
+
+    body {
+      background: #edc06a;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: 980px;
+      margin: 0 auto;
+      padding: 30px 0 0 0;
+    }
+
+    .tit {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .range_box {
+      position: relative;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .range_value {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      background: #a0db8e;
+      border: 2px solid #c3b786;
+      outline: none;
+    }
+
+    .range_value:hover {
+      border: 2px solid #b097c9;
+    }
+
+    .range_value::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 10px;
+      height: 40px;
+      background: #4CAF50;
+      cursor: pointer;
+      border-radius: 10%;
+    }
+
+    .range_value::-moz-range-thumb {
+      width: 25px;
+      height: 40px;
+      background: #4CAF50;
+      cursor: pointer;
+      border-radius: 10%;
+    }
+
+    .position_value {
+      position: absolute;
+      top: 32px;
+      LEFT: 10px;
+      z-index: 1;
+    }
+
+    p>span {
+      color: #c34d57;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="inner">
+        <h1 class="tit">Donation of Cash Back $dollar(Range Slider with JS)</h1>
+        <div class="range_box">
+          <label for="range_user">YOU PAY</label>
+          <input type="range" class="range_value" id="range_user" min="0" max="100" value="30">
+          <p><span id="user_value" class=" position_value"></span></p>
+        </div>
+        <div class="range_box">
+          <label for="range_admin">AUTHOR EARNS</label>
+          <input type="range" class="range_value" id="range_admin" min="0" max="99.05" value="24.95" disabled
+            style=" background:#a0db8e;">
+          <p><span id="admin_value" class=" position_value"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+    var range_user = document.getElementById("range_user");
+    var user_value = document.getElementById("user_value");
+    var range_admin01 = document.getElementById("range_admin");
+    var admin_value = document.getElementById("admin_value");
+
+    //FOR DEFAULT 
+    user_value.innerHTML = "$ " + (Math.round(range_user.value * 100) / 100).toFixed(2);
+    admin_value.innerHTML = "$ " + (Math.round(range_admin01.value * 100) / 100).toFixed(2);
+
+    range_user.oninput = function () {
+      user_value.innerHTML = "$ " + (Math.round(this.value * 100) / 100).toFixed(2);
+      console.log(user_value.innerHTML);
+      range_admin = (user_value.innerHTML.split("$ ")[1]) - 5.05;
+      range_admin01.value = (Math.round(range_admin * 100) / 100).toFixed(2);
+
+      console.log(range_admin01.value);
+      if (this.value < 20.00) {
+        admin_value.innerHTML = "$ " + 0.00;
+      } else {
+        admin_value.innerHTML = "$ " + (Math.round(range_admin * 100) / 100).toFixed(2);
+      }
+    }
+
+  </script>
+</body>
+
+</html>
